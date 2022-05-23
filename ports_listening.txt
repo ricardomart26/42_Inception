@@ -1,0 +1,19 @@
+****************** PORTS LOGS ******************
+
+WORDPRESS PORTS:
+Netid   State    Recv-Q   Send-Q     Local Address:Port      Peer Address:Port  
+udp     UNCONN   0        0             127.0.0.11:33402          0.0.0.0:*     
+tcp     LISTEN   0        4096          127.0.0.11:34071          0.0.0.0:*     
+tcp     LISTEN   0        511                    *:9000                 *:*      users:(("php-fpm7.3",pid=31,fd=7))
+
+NGINX PORTS:
+Netid   State    Recv-Q   Send-Q     Local Address:Port      Peer Address:Port  
+udp     UNCONN   0        0             127.0.0.11:36023          0.0.0.0:*     
+tcp     LISTEN   0        4096          127.0.0.11:39485          0.0.0.0:*     
+tcp     LISTEN   0        511                    *:443                  *:*      users:(("nginx",pid=13,fd=7),("nginx",pid=12,fd=7),("nginx",pid=11,fd=7),("nginx",pid=10,fd=7),("nginx",pid=9,fd=7),("nginx",pid=8,fd=7))
+
+MARIADB PORTS:
+Netid   State    Recv-Q   Send-Q     Local Address:Port      Peer Address:Port  
+udp     UNCONN   0        0             127.0.0.11:46053          0.0.0.0:*     
+tcp     LISTEN   0        80               0.0.0.0:3306           0.0.0.0:*     
+tcp     LISTEN   0        4096          127.0.0.11:44225          0.0.0.0:*     
