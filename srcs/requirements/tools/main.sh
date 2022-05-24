@@ -1,4 +1,4 @@
-FILE_PATH="/home/rimartin/42_Inception/srcs/requirements/tools"
+FILE_PATH="/home/${USERNAME}/42_Inception/srcs/requirements/tools"
 
 # chmod 777 $FILE_PATH/container_logs.sh
 # chmod 777 $FILE_PATH/error_logs.sh

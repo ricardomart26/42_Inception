@@ -3,8 +3,8 @@ echo "****************** ERROR/ACCESS LOGS ******************\n"
 
 echo "NGINX ERROR/ACCESS LOG:" 
 sudo docker exec -i nginx bash << EOF
-    cat var/log/nginx/rimartin-error.log
-    cat var/log/nginx/rimartin-access.log
+    cat var/log/nginx/${USERNAME}-error.log
+    cat var/log/nginx/${USERNAME}-access.log
 EOF
 
 echo "\nWORDPRESS ERROR/ACCESS LOG:" 

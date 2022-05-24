@@ -16,7 +16,7 @@ rm_vol:
 
 vol: down rm_vol build_vol
 
-run:
+run: build_vol
 	sudo docker network create inception-network || true; 
 	sudo docker-compose -f srcs/docker-compose.yaml up --build  -d
 

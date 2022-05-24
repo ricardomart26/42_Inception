@@ -41,6 +41,17 @@ services:
       - inception-network
     volumes:
       - wp_vol:/var/www/html/
+  
+  redis:
+    depends_on:
+      - mariadb
+    build: requirements/redis/
+    image: 42inception_redis
+    restart: always
+    container_name: redis
+    networks: 
+      - inception-network
+    env_file: .env
 
 networks:
   inception-network:
