@@ -19,5 +19,7 @@ One with Nginx, another with php-fpm and Wordpress installed, and the last one w
 
 # Overview of the tecnologies used:
 
-
-
+https://help.superhosting.bg/en/cgi-common-gateway-interface-fastcgi.html
+https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831548(v=ws.11)?redirectedfrom=MSDN
+https://pt.stackoverflow.com/questions/207464/como-funciona-o-php-fpm
+https://www.plesk.com/blog/various/why-do-you-need-php-fpm/
