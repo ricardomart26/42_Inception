@@ -1,5 +1,5 @@
 #! /bin/bash
 
-sed -i "s/_USERNAME_/${USERNAME}/g" /etc/nginx/nginx.conf
+sed -i "s/_USERNAME_/rimartin/g" /etc/nginx/nginx.conf
 
 nginx -g 'daemon off;'

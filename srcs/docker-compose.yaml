@@ -44,7 +44,7 @@ services:
   
   redis:
     depends_on:
-      - mariadb
+      - wordpress
     build: requirements/redis/
     image: 42inception_redis
     restart: always

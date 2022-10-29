@@ -92,5 +92,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
 
+define( 'WP_CACHE', true);
+define( 'WP_CACHE_KEY_SALT',  '_server_name_');
+
+
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
