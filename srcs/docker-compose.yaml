@@ -13,6 +13,10 @@ services:
       - inception-network
     volumes:
       - db_vol:/var/lib/mysql
+    extra_hosts:
+      - "www.rimartin.42.fr:0.0.0.0"
+      - "rimartin.42.fr:0.0.0.0"
+
 
   wordpress:
     depends_on:
@@ -26,6 +30,11 @@ services:
     env_file: .env
     volumes:
       - wp_vol:/var/www/html/
+    extra_hosts:
+      - "www.rimartin.42.fr:0.0.0.0"
+      - "rimartin.42.fr:0.0.0.0"
+    expose:
+      - "9000"
 
   nginx:
     depends_on:
@@ -41,17 +50,9 @@ services:
       - inception-network
     volumes:
       - wp_vol:/var/www/html/
-  
-  redis:
-    depends_on:
-      - wordpress
-    build: requirements/redis/
-    image: 42inception_redis
-    restart: always
-    container_name: redis
-    networks: 
-      - inception-network
-    env_file: .env
+    extra_hosts:
+      - "www.rimartin.42.fr:0.0.0.0"
+      - "rimartin.42.fr:0.0.0.0"
 
 networks:
   inception-network:

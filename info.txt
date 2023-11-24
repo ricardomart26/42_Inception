@@ -1,2 +1,0 @@
-https://cntnr.io/setting-up-wordpress-with-docker-262571249d50
-https://myjeeva.com/php-configuration-101.html

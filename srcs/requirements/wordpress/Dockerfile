@@ -1,22 +1,33 @@
-# Solve problem https://forums.docker.com/t/files-havent-been-copied-to-volume-folder-during-docker-run/114478/2
-FROM debian:10.11
+FROM debian:buster
 
-RUN apt-get update -yq
-RUN apt-get install wget -yq
-RUN apt-get install php7.3 php-cgi php-common php-fpm php-pear php-mbstring php-zip php-net-socket \
-	php-gd php-xml-util php-gettext php-mysql php-bcmath unzip git -yq
+RUN     apt-get update && \
+		apt-get install -y  \
+		curl mariadb-client \
+		php \
+		php7.3 \
+		php7.3-fpm \
+		php7.3-mysql \
+		php-common \
+		php7.3-cli \
+		php7.3-common \
+		php7.3-json \
+		php7.3-opcache \
+		php7.3-readline \
+		php-curl \
+		php-gd \
+		php-intl \
+		php-mbstring \
+		php-soap \
+		php-xml \
+		php-xmlrpc \
+		php-zip
 
-WORKDIR /var/www/html/
+RUN 	mkdir -p /var/run/ ; mkdir -p /run/php/
+COPY	./tools/start.sh /etc/
+COPY	./conf/www.conf /etc/php/7.3/fpm/pool.debian
+COPY 	./conf/wp-config.php /
+RUN 	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+		chmod +x wp-cli.phar && \
+		mv wp-cli.phar /usr/local/bin/wp
 
-RUN wget https://wordpress.org/latest.tar.gz 
-RUN tar -xvzf latest.tar.gz && rm latest.tar.gz
-COPY tools/wp-config.php ./wordpress/
-RUN chown -R www-data:www-data ./wordpress
-
-EXPOSE 9000
-
-WORKDIR /
-COPY tools/www.conf /etc/php/7.3/fpm/pool.d/www.conf
-
-COPY conf/start.sh /usr/local/bin/
-ENTRYPOINT ["start.sh"]
+ENTRYPOINT [ "bash", "/etc/start.sh" ]
