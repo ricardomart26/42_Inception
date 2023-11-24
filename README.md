@@ -69,3 +69,38 @@ Once configured and the service is active, it will listen to a port that is spec
 
 One with Nginx, another with php-fpm and Wordpress installed, and the last one with mariadb. This three containers must be able to comunicate with 
 
+
+
+1. How Docker and docker-compose work:
+
+    Docker: Docker is a platform for developing, shipping, and running applications in containers. Containers allow developers to package an application with its dependencies into a standardized unit that can run on any environment that supports Docker. This ensures consistency across different development, testing, and production environments.
+
+    docker-compose: Docker Compose is a tool for defining and running multi-container Docker applications. With docker-compose, you can define a multi-container environment in a single file (usually named docker-compose.yml). This file specifies services, networks, and volumes, allowing you to define the relationships and configurations between different containers in your application.
+
+2. The difference between a Docker image used with docker-compose and without docker-compose:
+
+    Without docker-compose: When using Docker without docker-compose, you typically manage individual containers using docker run commands. You manually specify the configurations for each container, including networks, volumes, and environment variables.
+
+    With docker-compose: Docker-compose simplifies the process of managing multiple containers by allowing you to define the entire application stack in a single YAML file. This includes all the necessary configurations, relationships, and dependencies between containers. You can then start and manage the entire application stack with a single docker-compose command.
+
+3. The benefit of Docker compared to VMs:
+
+    Resource Efficiency: Containers share the host OS kernel, which makes them more lightweight than virtual machines (VMs) that require a full operating system for each instance.
+
+    Isolation: Containers provide isolation similar to VMs but without the overhead of running a full OS. They encapsulate the application and its dependencies, ensuring consistency across different environments.
+
+    Portability: Docker containers can run on any system that supports Docker, providing a consistent environment from development to production.
+
+    Scalability: Docker enables easy scaling by replicating containers horizontally, allowing for efficient resource utilization.
+
+4. The pertinence of the directory structure required for this project:
+
+    A well-organized directory structure is crucial for maintaining and managing Docker projects efficiently. The example provided in the project's PDF file likely defines a structure that separates different components of the project:
+        app: Contains the application code.
+        data: May store persistent data used by containers.
+        docker: Contains Docker-related files, including the Dockerfile for building the image and the docker-compose.yml file for defining the application stack.
+        scripts: May contain scripts used for various purposes within the Docker environment.
+
+    This structure helps in maintaining a clean separation of concerns, making it easier to manage, version, and share the project. It also aligns with Docker best practices for organizing projects.
+
+When working with Docker and docker-compose, following best practices for directory structure and configuration can enhance the maintainability and reproducibility of your containerized applications.
