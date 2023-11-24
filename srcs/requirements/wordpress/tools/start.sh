@@ -1,7 +1,6 @@
-sed -ie "s/listen = \/run\/php\/php7.3-fpm.sock/listen = 0.0.0.0:9000/" /etc/php/7.3/fpm/pool.d/www.conf
+sed -ie "s/listen = \/run\/php\/php7.4-fpm.sock/listen = 0.0.0.0:9000/" /etc/php/7.4/fpm/pool.d/www.conf
 
 if [ ! -f /var/www/html/wp-config.php ]; then
- 	echo "\n\n\nWarning:wp-config.php\n\n\n"
 	cd /var/www/html/
 	mv 	/wp-config.php /var/www/html/
 
@@ -21,4 +20,4 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 fi
 
 
-exec /usr/sbin/php-fpm7.3 -F
+exec /usr/sbin/php-fpm7.4 -F

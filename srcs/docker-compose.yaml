@@ -4,7 +4,7 @@ services:
   mariadb:
     build: requirements/mariadb/
     container_name: mariadb
-    image: 42inception_mariadb
+    image: mariadb
     restart: always
     env_file: .env
     expose:
@@ -22,7 +22,7 @@ services:
     depends_on:
       - mariadb
     build: requirements/wordpress/
-    image: 42inception_wordpress
+    image: wordpress
     restart: always
     container_name: wordpress
     networks:
@@ -40,7 +40,7 @@ services:
     depends_on:
       - wordpress
     build: requirements/nginx/
-    image: 42inception_nginx
+    image: nginx
     container_name: nginx
     restart: always
     env_file: .env
